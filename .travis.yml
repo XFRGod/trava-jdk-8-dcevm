@@ -23,10 +23,10 @@ matrix:
   - os: windows
     env: OS_BUILD=windows
     before_install:
-    - choco install microsoft-build-tools --version 15.0.26320.2 --force
+    # choco install microsoft-build-tools --version 15.0.26320.2 --force
     - choco install cygwin
     # - choco install vs2015sdk
-    - choco install visualstudio2015-update
+    - choco install visualstudio2019buildtools
     - C:\\tools\\cygwin\\cygwinsetup.exe -q -P make,unzip,automake,autoconf,zip
 before_script:
   - if [[ $OS_BUILD == "windows" ]]; then git config --system core.longpaths true; git config --global core.autocrlf false; fi
